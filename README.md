@@ -17,7 +17,7 @@ If the official app makes your desktop feel choppy, or your strip shows up in Si
 | | |
 |---|---|
 | Controller | **ROBOBLOQ "USBHID"**, USB VID:PID **`1a86:fe07`** (HID, vendor page 0xFF00, 64-byte reports) |
-| Strips | Robobloq / DX Light / SyncLight USB-powered monitor backlight strips (screen sync, 34" kit tested: 75 LEDs = 17 left + 41 top + 17 right, firmware 1.9.4) |
+| Strips | Robobloq / DX Light / SyncLight USB-powered monitor backlight strips. Tested: **34" kit** — 75 LEDs = 17 left + 41 top + 17 right; **32" kit** — 78 LEDs = 21 + 36 + 21 (firmware 1.9.4) |
 | Other sizes | Should work — set LEDs per side in Settings and use the **Test** button |
 | OS | Windows 10 / 11, 64-bit |
 
@@ -31,6 +31,8 @@ The controller is detected automatically; size, LED count and firmware version a
 - **Strip layout** — LEDs per side + start corner (bottom-left clockwise or bottom-right counter-clockwise), with a 5-second **Test** pattern (left red, top green, right blue, first LEDs white).
 - **Turns the strip off** on shutdown/restart, sleep/hibernate and when the monitor goes to standby (the controller is powered by the monitor's USB and would otherwise keep its last color).
 - **Auto-updates** — *Check for updates* downloads, verifies (SHA-256) and installs new versions, then restarts.
+- **Multiple strips / multiple monitors** — each strip is detected automatically and has its own mode, monitor, LED layout and colors; *Identify* makes a strip blink.
+- **Light effects** besides Ambilight — static color, breathing, rainbow wave, rainbow cycle, aurora (3 custom colors); adjustable speed, strips stay in sync.
 - **English / Romanian** interface.
 - Tray app, start with Windows, multi-monitor selection, live stats.
 
