@@ -47,6 +47,12 @@ The strip uses a proprietary HID protocol: `RB` frames (`52 42 len id cmd … su
 
 Robobloq, SyncLight, DX Light, monitor light strip, monitor backlight, screen sync, ambilight, ambient light, bias lighting, USB LED strip, 1a86:fe07, USBHID, Prismatik alternative, OpenRGB alternative, SignalRGB unsupported device, Alienware AW3423DWF, ultrawide, HDR, Windows 11.
 
+## License
+
+**Freeware** — free to use and to share the unmodified official release. Selling it and distributing modified versions are not allowed. No warranty. Full text: [LICENSE](LICENSE).
+
+FallenLight is an independent project, **not affiliated with Robobloq**, DX Light or SyncLight. All trademarks belong to their owners.
+
 ---
 
-© 2026 Fallen. Free to use.
+© 2026 Fallen
