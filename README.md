@@ -1,27 +1,46 @@
-# FallenLight
+# FallenLight — Ambilight for Robobloq monitor LED strips (Windows)
 
-Ambilight pentru banda LED **Robobloq** (controller USB `1a86:fe07`) pe Windows 10/11.
-Banda preia culorile de pe marginile ecranului, fără DX Light / SyncLight și fără să încetinească Windows-ul.
+**FallenLight** is a lightweight Windows 10/11 tray app that turns a **Robobloq USB monitor light strip** into a smooth, low-latency **Ambilight / screen sync** — without the official **DX Light / Robobloq SyncLight** app, without OpenRGB or SignalRGB plugins, and **without making Windows stutter** on high refresh rate monitors (tested at 3440×1440 @ 165 Hz, HDR on).
 
-## Descărcare
+If the official app makes your desktop feel choppy, or your strip shows up in SignalRGB as *"ROBOBLOQ USBHID – Plugin: None"*, this is for you.
 
-Ultima versiune: **[Releases → Latest](../../releases/latest)** → descarcă `FallenLight-vX.Y.zip`, dezarhivează și pornește `FallenLight.exe`.
+## Download
 
-- Nu trebuie instalat nimic (.NET e inclus).
-- La prima pornire Windows poate afișa „Windows a protejat PC-ul” (aplicația nu e semnată digital):
-  **Mai multe informații → Rulează oricum**.
-- Închide DX Light / SyncLight și OpenRGB înainte, altfel își suprascriu culorile.
+➡️ **[Latest release](../../releases/latest)** → download `FallenLight-vX.Y.zip`, unzip anywhere you can write to (e.g. Documents), run `FallenLight.exe`.
 
-## Actualizări
+- Nothing to install — the .NET runtime is bundled.
+- First launch: Windows SmartScreen may say *"Windows protected your PC"* (the app isn't code-signed). Click **More info → Run anyway**.
+- Close DX Light / SyncLight, OpenRGB and SignalRGB first, otherwise they fight over the strip.
 
-Din meniul din tray sau din Setări: **Verifică actualizări**. Versiunea nouă se descarcă,
-se verifică și se instalează singură, apoi aplicația repornește (setările se păstrează).
+## Supported hardware
 
-## Ce face
+| | |
+|---|---|
+| Controller | **ROBOBLOQ "USBHID"**, USB VID:PID **`1a86:fe07`** (HID, vendor page 0xFF00, 64-byte reports) |
+| Strips | Robobloq / DX Light / SyncLight USB-powered monitor backlight strips (screen sync, 34" kit tested: 75 LEDs = 17 left + 41 top + 17 right, firmware 1.9.4) |
+| Other sizes | Should work — set LEDs per side in Settings and use the **Test** button |
+| OS | Windows 10 / 11, 64-bit |
 
-- Captură eficientă (DXGI Desktop Duplication, micșorare pe placa video) — ~1–3% dintr-un nucleu.
-- Suport HDR, corecție gamma, prag de negru, netezire, saturație.
-- Configurare sens bandă + buton de test pentru laturi.
-- Stinge banda la shutdown, sleep și când monitorul intră în standby.
+The controller is detected automatically; size, LED count and firmware version are read from the device.
 
-© 2026 Fallen
+## Features
+
+- **Efficient capture** — DXGI Desktop Duplication with GPU downscaling (mipmaps). Only a ~215×90 image reaches the CPU: ~0.3–0.6 ms per frame, ~1–3 % of one CPU core at 30 fps.
+- **HDR aware** — captures the real 16-bit (FP16 scRGB) desktop and normalizes it to your Windows *SDR content brightness*, so HDR games don't wash out to white.
+- **Color controls** — gamma (default 2.2), black threshold, saturation, smoothing, brightness, edge sampling depth, capture FPS.
+- **Strip layout** — LEDs per side + start corner (bottom-left clockwise or bottom-right counter-clockwise), with a 5-second **Test** pattern (left red, top green, right blue, first LEDs white).
+- **Turns the strip off** on shutdown/restart, sleep/hibernate and when the monitor goes to standby (the controller is powered by the monitor's USB and would otherwise keep its last color).
+- **Auto-updates** — *Check for updates* downloads, verifies (SHA-256) and installs new versions, then restarts.
+- Tray app, start with Windows, multi-monitor selection, live stats.
+
+## Protocol notes
+
+The strip uses a proprietary HID protocol: `RB` frames (`52 42 len id cmd … sum`) for simple commands and `SC` frames (`53 43 lenHi lenLo id cmd … sum`) split into 64-byte reports for per-LED data. Screen sync is command `0x80` with `[start, R, G, B, end]` tuples (1-based LED indices); `0x82` returns device info. Checksums are a byte sum. Credit to the OpenRGB project for the original reverse engineering.
+
+## Keywords
+
+Robobloq, SyncLight, DX Light, monitor light strip, monitor backlight, screen sync, ambilight, ambient light, bias lighting, USB LED strip, 1a86:fe07, USBHID, Prismatik alternative, OpenRGB alternative, SignalRGB unsupported device, Alienware AW3423DWF, ultrawide, HDR, Windows 11.
+
+---
+
+© 2026 Fallen. Free to use.
