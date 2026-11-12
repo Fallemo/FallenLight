@@ -1,0 +1,56 @@
+FallenLight License (Freeware)
+
+Copyright (c) 2026 Fallen. All rights reserved.
+
+FallenLight ("the Software") is free software in the sense of "free of charge",
+not open source. By downloading, installing or using the Software you agree
+to the following terms.
+
+1. USE
+   You may download, install and use the Software free of charge, on any number
+   of computers, for personal or professional purposes.
+
+2. SHARING
+   You may share the unmodified, official release of the Software (the original
+   ZIP or FallenLight.exe as published at https://github.com/Fallemo/FallenLight)
+   with others, free of charge, provided this license and all copyright notices
+   are kept. Linking to the GitHub page is preferred.
+
+3. RESTRICTIONS
+   You may NOT:
+   a) sell, rent, lease, sublicense or otherwise charge for the Software, or
+      include it in any paid product, bundle or service;
+   b) distribute modified, patched, repackaged or renamed versions of the Software;
+   c) remove or alter copyright, license or attribution notices;
+   d) decompile, disassemble or reverse engineer the Software in order to create
+      a derivative or competing product, except to the extent expressly permitted
+      by applicable law.
+
+4. THIRD-PARTY COMPONENTS
+   The Software includes third-party components distributed under their own
+   licenses (Vortice.Windows - MIT License; .NET Runtime / Windows Forms - MIT
+   License). Those licenses apply to those components; see "About" in the
+   application. Information about the strip's USB protocol comes from the OpenRGB
+   project; no OpenRGB code is included.
+
+5. TRADEMARKS
+   Robobloq, DX Light, SyncLight, OpenRGB, SignalRGB, Alienware and other names
+   are trademarks of their respective owners. FallenLight is an independent
+   project and is not affiliated with, endorsed or sponsored by any of them.
+
+6. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT.
+
+7. LIMITATION OF LIABILITY
+   IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OF OR OTHER DEALINGS IN
+   THE SOFTWARE, INCLUDING ANY DAMAGE TO HARDWARE.
+
+8. TERMINATION
+   This license ends automatically if you break its terms. You must then stop
+   using and distributing the Software.
+
+The author may release future versions under different terms.
