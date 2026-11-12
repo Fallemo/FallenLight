@@ -31,11 +31,17 @@ The controller is detected automatically; size, LED count and firmware version a
 - **Strip layout** — LEDs per side + start corner (bottom-left clockwise or bottom-right counter-clockwise), with a 5-second **Test** pattern (left red, top green, right blue, first LEDs white).
 - **Turns the strip off** on shutdown/restart, sleep/hibernate and when the monitor goes to standby (the controller is powered by the monitor's USB and would otherwise keep its last color).
 - **Auto-updates** — *Check for updates* downloads, verifies (SHA-256) and installs new versions, then restarts.
+- **English / Romanian** interface.
 - Tray app, start with Windows, multi-monitor selection, live stats.
 
 ## Protocol notes
 
-The strip uses a proprietary HID protocol: `RB` frames (`52 42 len id cmd … sum`) for simple commands and `SC` frames (`53 43 lenHi lenLo id cmd … sum`) split into 64-byte reports for per-LED data. Screen sync is command `0x80` with `[start, R, G, B, end]` tuples (1-based LED indices); `0x82` returns device info. Checksums are a byte sum. Credit to the OpenRGB project for the original reverse engineering.
+The strip uses a proprietary HID protocol: `RB` frames (`52 42 len id cmd … sum`) for simple commands and `SC` frames (`53 43 lenHi lenLo id cmd … sum`) split into 64-byte reports for per-LED data. Screen sync is command `0x80` with `[start, R, G, B, end]` tuples (1-based LED indices); `0x82` returns device info. Checksums are a byte sum. Credit to the [OpenRGB](https://gitlab.com/CalcProgrammer1/OpenRGB) project for the original reverse engineering — FallenLight is an independent implementation (no OpenRGB code is used); the protocol details were also verified on real hardware.
+
+## Third-party components
+
+- [Vortice.Windows](https://github.com/amerkoleci/Vortice.Windows) (Direct3D11, DXGI bindings) — MIT License
+- .NET Runtime / Windows Forms — MIT License
 
 ## Keywords
 
