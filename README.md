@@ -32,6 +32,8 @@ The controller is detected automatically; size, LED count and firmware version a
 - **Turns the strip off** on shutdown/restart, sleep/hibernate and when the monitor goes to standby (the controller is powered by the monitor's USB and would otherwise keep its last color).
 - **Auto-updates** — *Check for updates* downloads, verifies (SHA-256) and installs new versions, then restarts.
 - **Multiple strips / multiple monitors** — each strip is detected automatically and has its own mode, monitor, LED layout and colors; *Identify* makes a strip blink.
+- **Flexible layout** — LEDs on any of the 4 sides (incl. bottom), any start corner and direction; rotated / portrait monitors supported.
+- **Per-app modes** — e.g. a game → Ambilight, everything else → static color.
 - **Light effects** besides Ambilight — static color, breathing, rainbow wave, rainbow cycle, aurora (3 custom colors); adjustable speed, strips stay in sync.
 - **English / Romanian** interface.
 - Tray app, start with Windows, multi-monitor selection, live stats.
